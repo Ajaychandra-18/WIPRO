@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Website Feedback Survey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f3;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            padding-top: 80px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            width: 450px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            color: #2980b9;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 6px;
+            margin-top: 4px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        input[type="submit"], input[type="reset"] {
+            width: 48%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"] {
+            background-color: #27ae60;
+            color: white;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #219150;
+        }
+
+        input[type="reset"] {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #c0392b;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        /* Top-right feedback note */
+        .feedback-note {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #fef9e7;
+            border: 2px solid #f1c40f;
+            border-radius: 8px;
+            padding: 15px;
+            width: 220px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            font-size: 0.9em;
+        }
+
+        .feedback-note h3 {
+            margin-top: 0;
+            margin-bottom: 5px;
+            color: #d35400;
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed top-right note -->
+    <div class="feedback-note">
+        <h3>Why your feedback matters</h3>
+        <p>Your feedback helps us improve our website experience for everyone. Thank you!</p>
+    </div>
+
+    <div>
+        <header>
+            <h1>Website Feedback Survey</h1>
+            <p>We value your opinion. Please take a minute to share your thoughts.</p>
+        </header>
+
+        <nav>
+            <a href="#">Home</a> |
+            <a href="#">About</a> |
+            <a href="#">Contact</a>
+        </nav>
+
+        <form action="feedback.php" method="post">
+            <!-- Personal Info Section -->
+            <section>
+                <h2>Personal Information</h2>
+                <label for="fullname">Full Name: *</label>
+                <input type="text" id="fullname" name="fullname" required>
+
+                <label for="email">Email Address: *</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="10" max="100">
+            </section>
+
+            <!-- Website Rating Section -->
+            <section>
+                <h2>Website Rating</h2>
+                <label for="design">Design (1-10):</label>
+                <input type="range" id="design" name="design" min="1" max="10">
+
+                <p>Content Quality:</p>
+                <label><input type="radio" name="quality" value="Excellent"> Excellent</label>
+                <label><input type="radio" name="quality" value="Good"> Good</label>
+                <label><input type="radio" name="quality" value="Average"> Average</label>
+                <label><input type="radio" name="quality" value="Poor"> Poor</label>
+
+                <label for="page">Most visited page:</label>
+                <select id="page" name="page">
+                    <option>Home</option>
+                    <option>Blog</option>
+                    <option>Products</option>
+                    <option>Contact</option>
+                </select>
+            </section>
+
+            <!-- Suggestions Section -->
+            <section>
+                <h2>Suggestions</h2>
+                <textarea name="suggestions" rows="4" placeholder="Write your suggestions here..."></textarea>
+                <label><input type="checkbox" id="contact" name="contact"> I agree to be contacted regarding my feedback</label>
+            </section>
+
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+
+        <footer>
+            <p>© 2025 Website Survey</p>
+        </footer>
+    </div>
+</body>
+</html>

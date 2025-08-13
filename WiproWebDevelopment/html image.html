@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Lab — Gallery</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Header with scrolling images */
+    header {
+        overflow: hidden;
+        position: relative;
+        background-color: #004d40;
+        color: white;
+        padding: 10px;
+    }
+    header h1 {
+        margin: 0;
+    }
+    header p {
+        margin: 5px 0 15px;
+    }
+    .scroll-container {
+        display: flex;
+        animation: scroll 15s linear infinite;
+        gap: 20px;
+    }
+    .scroll-container img {
+        height: 120px;
+        border-radius: 5px;
+    }
+    @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+
+    /* Main content */
+    main {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 20px;
+    }
+    .gallery img {
+        width: 100%;
+        border-radius: 5px;
+    }
+    .caption {
+        font-size: 14px;
+        margin-top: 5px;
+    }
+    .notes {
+        background: #f8f8f8;
+        padding: 15px;
+        border-radius: 5px;
+    }
+
+    /* Footer */
+    footer {
+        border-top: 1px solid #ccc;
+        padding: 20px;
+        text-align: center;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #004d40;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #00796b;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Image Lab — Gallery</h1>
+    <p>Practice with &lt;img&gt;, srcset, &lt;picture&gt;, SVG, and accessibility</p>
+    <div class="scroll-container">
+        <img src="rice.jpg" alt="Rice">
+        <img src="snacks.jpg" alt="Snacks">
+        <img src="truck.png" alt="Truck">
+        <img src="divider.png" alt="Divider">
+        <img src="map.png" alt="Map">
+        <!-- Duplicate for smooth loop -->
+        <img src="rice.jpg" alt="Rice">
+        <img src="snacks.jpg" alt="Snacks">
+        <img src="truck.png" alt="Truck">
+        <img src="divider.png" alt="Divider">
+        <img src="map.png" alt="Map">
+    </div>
+</header>
+
+<main>
+    <section class="gallery">
+        <div>
+            <img src="rice.jpg" alt="Basmati rice">
+            <div class="caption">Basmati rice — 5 kg bag.</div>
+        </div>
+        <div>
+            <img src="snacks.jpg" alt="Assorted Snacks Box">
+            <div class="caption">Assorted Snacks Box (WebP served when supported).</div>
+        </div>
+        <div>
+            <img src="truck.png" alt="Delivery truck">
+            <div class="caption">Delivery truck (SVG inline with accessible title/desc).</div>
+        </div>
+        <div>
+            <img src="divider.png" alt="Decorative divider">
+            <div class="caption">Decorative divider (not read by screen readers).</div>
+        </div>
+        <div>
+            <img src="map.png" alt="Store map">
+            <div class="caption">Click a section to navigate to that aisle (image map).</div>
+        </div>
+    </section>
+
+    <aside class="notes">
+        <h2>Notes</h2>
+        <p>Use <code>srcset</code> and <code>&lt;picture&gt;</code> to reduce bandwidth and serve modern formats. Add <code>loading="lazy"</code> to defer-screen images.</p>
+    </aside>
+</main>
+
+<footer>
+    <p>Submit Lab</p>
+    <button>Submit Lab</button>
+</footer>
+
+</body>
+</html>
