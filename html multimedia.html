@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 Multimedia Lab</title>
+    <style>
+        body {
+            background-color: #222;
+            color: #333;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .container {
+            background-color: #f9f9f9;
+            padding: 20px;
+            width: 600px;
+            margin: auto;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        video, audio, embed, iframe {
+            width: 100%;
+            margin: 10px 0;
+        }
+        iframe {
+            border: 1px solid #ccc;
+            height: 200px;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<h3>7.HTML MULTIMEDIA::</h3>
+
+<div class="container">
+    <h1>HTML5 Multimedia Lab</h1>
+    <p>This page demonstrates video, audio, embed (PDF), iframe, and inline SVG.</p>
+
+    <!-- YouTube Video -->
+    <h3>Video (YouTube)</h3>
+    <iframe width="100%" height="315" 
+        src="https://www.youtube.com/embed/x6OaIcF3hbQ?si=iIFChO62ZQTQmOPB" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+    </iframe>
+
+    <!-- Local Audio -->
+    <h3>Audio (sample_audio.mp3)</h3>
+    <audio controls loop>
+        <source src="audios/sample_audio.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Local PDF -->
+    <h3>Embed (HTMLCSSJS_Labs_2.pdf)</h3>
+    <embed src="documents/HTMLCSSJS_Labs_2.pdf" type="application/pdf" width="100%" height="200px">
+    <p>If not visible, <a href="documents/HTMLCSSJS_Labs_2.pdf">download the document</a></p>
+
+    <!-- Iframe with demo.html -->
+    <h3>Iframe (demo.html)</h3>
+    <iframe src="demo.html"></iframe>
+    <p style="font-size: small; color: gray;">Preview created for the HTML5 Multimedia Lab. Files saved in the workspace.</p>
+
+    <!-- Inline SVG -->
+    <h3>Inline SVG</h3>
+    <svg width="200" height="100">
+        <rect x="10" y="10" width="80" height="80" fill="lightblue" stroke="black" stroke-width="2"/>
+        <circle cx="150" cy="50" r="40" fill="orange" stroke="black" stroke-width="2"/>
+        <text x="10" y="95" font-size="12" fill="black">Sample SVG Shapes</text>
+    </svg>
+</div>
+
+</body>
+</html>
